@@ -10,7 +10,7 @@ module.exports.aiResponse =  async (req, res) => {
   
 
      const response = await aiService(code);
-     console.log(response);
+    
      return res.status(200).send(response);
      
      } catch (error) {
