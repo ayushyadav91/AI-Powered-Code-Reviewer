@@ -6,7 +6,7 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-    res.send('Server is Starting');
+    res.send('Server is Starting on Port 3000');
 });
 app.use('/api/ai', aiRoutes);
 module.exports = app;
