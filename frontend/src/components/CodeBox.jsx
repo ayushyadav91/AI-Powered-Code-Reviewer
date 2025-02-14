@@ -39,43 +39,46 @@ const [review, setReview] = useState("")
     
   return (
     <div>
-        <main className='flex flex-row w-screen h-screen bg-gray-600 overflow-x-scroll overflow-y-hidden overflow-x-scroll overflow-x-hidden'>
+        <main className='flex flex-row w-screen h-screen bg-gray-600  outline-none overflow-x-scroll overflow-hidden overflow-y-hidden overflow-x-scroll overflow-x-hidden border-none'>
          
-            <div className="left   w-200 bg-gray-600 m-3  mb-6 rounded-md relative  ">
+            <div className="left   w-200 bg-gray-600 m-3  mb-6 rounded-md  outline-none  relative ">
             
-                <div className="code  h-full w-full m-0  ">
+                <div className="code  h-full w-full m-0 border-none outline-none">
 
-                    <pre className="language-javascript  h-full w-full m-0 rounded-md bg-gray-600 p-3 overflow-x-scroll">
+                    <pre className="language-javascript  h-full w-full m-0 rounded-md bg-gray-600 p-3  outline-none overflow-hidden ">
                     <Editor
               value={code}
               onValueChange={code => setCode(code)}
               highlight={code => prism.highlight(code, prism.languages.javascript, "javascript")}
               padding={10}
+             
               style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 16,
+                outline: "none" ,
                 height: "100%",
                 width: "100%",
                 margin: 0,
                 padding: 0,
-                
-                borderRadius:null,
-                backgroundColor: "#0c0c0c",
+                backgroundColor: "transparent",
+               
+                overflow: "auto",
 
               }}
             />
                     </pre>
                 </div>
                 <div onClick={reviewCode}
-                 className="review absolute  right-5 bottom-4 color-black bg-indigo-400 pl-3 pr-3 p-1 rounded-lg font-semibold select-none text-sm">Review</div>
+                 className="review absolute  right-10 bottom-4 color-black bg-indigo-400 pl-3 pr-3 p-1 rounded-lg font-semibold select-none text-sm">Review</div>
             </div>
             <div className="right h-100% w-200 bg-zinc-700  text-white m-4 mt-5.5 rounded-md p-3 overflow-auto">
+                <div>
            <Markdown rehypePlugins={[rehypeHighlight]}>
             
             {review}
             </Markdown>
             </div>
-           
+            </div>
         </main>
 
 
