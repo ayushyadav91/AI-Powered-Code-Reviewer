@@ -12,7 +12,7 @@ import axios from 'axios'
 
 const CodeBox = () => {
      
-    const [code, setCode] = useState(` //Write Your Code Here`)
+    const [code, setCode] = useState(`//Write Your Code Here`)
     
 const [review, setReview] = useState("")
 
