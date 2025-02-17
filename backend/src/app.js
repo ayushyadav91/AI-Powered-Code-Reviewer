@@ -5,7 +5,13 @@ const cors = require('cors');
 
 
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'http://localhost:5173',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        
+    }
+));
 
 app.use(express.json());
 
